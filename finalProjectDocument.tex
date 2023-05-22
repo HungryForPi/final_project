@@ -1,0 +1,131 @@
+\documentclass{scrartcl}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+\usepackage[shortlabels]{enumitem}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{epigraph}
+\usepackage[colorlinks]{hyperref}
+\usepackage{microtype}
+\usepackage{mathtools}
+\usepackage[headsepline]{scrlayer-scrpage}
+\usepackage{thmtools}
+\renewcommand{\epigraphsize}{\scriptsize}
+\renewcommand{\epigraphwidth}{60ex}
+\addtolength{\textheight}{3.14cm}
+\ihead{\footnotesize\textbf{APCS}}
+\ohead{\footnotesize \today}
+\providecommand{\clubs}[1]{$#1\clubsuit$}
+\providecommand{\ol}{\overline}
+\providecommand{\eps}{\varepsilon}
+\providecommand{\half}{\frac{1}{2}}
+\providecommand{\dang}{\measuredangle} %% Directed angle
+\providecommand{\CC}{\mathbb C}
+\providecommand{\FF}{\mathbb F}
+\providecommand{\NN}{\mathbb N}
+\providecommand{\QQ}{\mathbb Q}
+\providecommand{\RR}{\mathbb R}
+\providecommand{\ZZ}{\mathbb Z}
+\providecommand{\dg}{^\circ}
+\providecommand{\ii}{\item}
+\providecommand{\alert}[1]{\textcolor{blue}{\textsf{\textbf{#1}}}}
+% hacks for arc
+\providecommand{\tarc}{\mbox{\large$\frown$}}
+\providecommand{\arc}[1]{\stackrel{\tarc}{#1}}
+\reversemarginpar
+\providecommand{\printpuid}[1]{\marginpar{\href{https://otis.evanchen.cc/arch/#1}{\ttfamily\footnotesize\color{green!40!black}#1}}}
+
+\mdfdefinestyle{mdbluebox}{roundcorner=10pt,innerbottommargin=9pt,
+	linecolor=blue,backgroundcolor=TealBlue!5,}
+\declaretheoremstyle[headfont=\sffamily\bfseries\color{MidnightBlue},
+mdframed={style=mdbluebox},]{thmbluebox}
+
+\mdfdefinestyle{mdredbox}{frametitlefont=\bfseries,innerbottommargin=8pt,
+	nobreak=true,backgroundcolor=Salmon!5,linecolor=RawSienna,}
+\declaretheoremstyle[headfont=\bfseries\color{RawSienna},
+mdframed={style=mdredbox},headpunct={\\[3pt]},postheadspace=0pt,]{thmredbox}
+
+\mdfdefinestyle{mdgreenbox}{linecolor=ForestGreen,backgroundcolor=ForestGreen!5,
+	linewidth=2pt,rightline=false,leftline=true,topline=false,bottomline=false,}
+\declaretheoremstyle[headfont=\bfseries\sffamily\color{ForestGreen!70!black},
+mdframed={style=mdgreenbox},headpunct={ --- },]{thmgreenbox}
+
+\mdfdefinestyle{mdorangebox}{linecolor=RedOrange,backgroundcolor=RedOrange!5,
+	linewidth=2pt,rightline=false,leftline=true,topline=false,bottomline=false,}
+\declaretheoremstyle[headfont=\bfseries\sffamily\color{RedOrange!70!black},
+mdframed={style=mdorangebox},headpunct={ --- },]{thmorangebox}
+
+\mdfdefinestyle{mdblackbox}{linecolor=black,backgroundcolor=RedViolet!5!gray!5,
+	linewidth=3pt,rightline=false,leftline=true,topline=false,bottomline=false,}
+\declaretheoremstyle[mdframed={style=mdblackbox}]{thmblackbox}
+
+\declaretheorem[style=thmredbox,name=Problem,numberwithin=section]{problem}
+\declaretheorem[style=thmredbox,name=Problem,numbered=no]{problem*}
+\declaretheorem[style=thmredbox,name=Required Problem,sibling=problem]{reqproblem}
+
+\declaretheorem[style=thmredbox,name=$(2\clubsuit)$ Problem,sibling=problem]{probE}
+\declaretheorem[style=thmredbox,name=$(3\clubsuit)$ Problem,sibling=problem]{probM}
+\declaretheorem[style=thmredbox,name=$(5\clubsuit)$ Problem,sibling=problem]{probH}
+\declaretheorem[style=thmredbox,name=$(9\clubsuit)$ Problem,sibling=problem]{probZ}
+
+\declaretheorem[style=thmbluebox,name=Theorem,sibling=problem]{theorem}
+\declaretheorem[style=thmbluebox,name=Lemma,sibling=theorem]{lemma}
+\declaretheorem[style=thmbluebox,name=Theorem,numbered=no]{theorem*}
+\declaretheorem[style=thmbluebox,name=Lemma,numbered=no]{lemma*}
+\declaretheorem[style=thmgreenbox,name=Claim,sibling=theorem]{claim}
+\declaretheorem[style=thmgreenbox,name=Claim,numbered=no]{claim*}
+\declaretheorem[style=thmblackbox,name=Remark,sibling=theorem]{remark}
+\declaretheorem[style=thmblackbox,name=Remark,numbered=no]{remark*}
+\declaretheorem[style=thmgreenbox,name=Definition,sibling=theorem]{definition}
+\declaretheorem[style=thmgreenbox,name=Definition,numbered=no]{definition*}
+\declaretheorem[style=thmorangebox,name=Warning,sibling=theorem]{warning}
+\declaretheorem[style=thmorangebox,name=Note,numbered=no]{note}
+\declaretheorem[style=thmblackbox,name=Exercise,sibling=problem]{exercise}
+
+\usepackage{graphicx}
+\usepackage{yhmath}
+\usepackage{listings}
+%% 426c616e6b204c615465587e
+
+\newenvironment{soln}{\begin{proof}[Solution]}{\end{proof}}
+
+\title{APCS Final Project: Visual Sorting}
+\author{Aditya Pahuja, period 7}
+\date{\today}
+\begin{document}
+\maketitle
+\tableofcontents
+\pagebreak
+
+\section{Description}
+The goal is to have a program that visualizes sorting algorithms:
+for example, one of the animations I would create would go through
+this process for merge sort.
+\begin{figure}[h]
+	\centering
+	\includegraphics{mergeSort}
+\end{figure}
+
+\section{Current Functionalities}
+I have very minimal progress so far.
+\begin{enumerate}
+	\ii A \texttt{ListElement} class whose objects toggle between
+	displaying \texttt{value} and displaying a bar whose length
+	is related to \texttt{value}. (The displaying itself is not done yet)
+	\ii A \texttt{Sorter} class which will eventually do the sorting.
+\end{enumerate}
+
+\section{Next Steps}
+\begin{enumerate}
+	\ii Implement the sorting algorithms (not necessarily with
+	tracking where the \texttt{ListElement} objects should be on the screen)
+	\ii Implement random array generation
+	\ii Work on making things appear on the screen
+\end{enumerate}
+\pagebreak
+\section{UML Diagram}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.18]{UML_v1}
+\end{figure}
+
+\end{document}
