@@ -1,0 +1,5 @@
+\contentsline {section}{\numberline {1}Description}{2}{section.1}%
+\contentsline {section}{\numberline {2}Current Functionalities}{2}{section.2}%
+\contentsline {section}{\numberline {3}Next Steps}{2}{section.3}%
+\contentsline {section}{\numberline {4}UML Diagram}{3}{section.4}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

@@ -93,8 +93,8 @@ mdframed={style=mdorangebox},headpunct={ --- },]{thmorangebox}
 \date{\today}
 \begin{document}
 \maketitle
-\tableofcontents
-\pagebreak
+%\tableofcontents
+%\pagebreak
 
 \section{Description}
 The goal is to have a program that visualizes sorting algorithms:
@@ -106,26 +106,33 @@ this process for merge sort.
 \end{figure}
 
 \section{Current Functionalities}
-I have very minimal progress so far.
-\begin{enumerate}
+\begin{itemize}
 	\ii A \texttt{ListElement} class whose objects toggle between
 	displaying \texttt{value} and displaying a bar whose length
 	is related to \texttt{value}. (The displaying itself is not done yet)
 	\ii A \texttt{Sorter} class which will eventually do the sorting.
-\end{enumerate}
+	\ii An \texttt{Artist} class which is supposed to be a container for
+	methods to draw things.
+	\ii Random array generation using \texttt{java.util.Collections}.
+	\ii Figured out how to draw the \texttt{ListElements} neatly.
+	\ii Bubble sort! (but animations are annoying)
+\end{itemize}
 
 \section{Next Steps}
-\begin{enumerate}
-	\ii Implement the sorting algorithms (not necessarily with
-	tracking where the \texttt{ListElement} objects should be on the screen)
-	\ii Implement random array generation
-	\ii Work on making things appear on the screen
-\end{enumerate}
-\pagebreak
+\begin{itemize}
+	\ii More sorting algorithms
+	\ii Animations
+	\ii User interaction
+\end{itemize}
+
+The animations in particular are really, really annoying because
+Processing updates the screen after method calls are all done,
+as opposed to during a method call.
+
 \section{UML Diagram}
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.18]{UML_v1}
+	\includegraphics[width=0.8\linewidth]{UML_v2}
 \end{figure}
 
 \end{document}

@@ -1,16 +1,16 @@
 class ListElement {
   // fields
-  public int xCor;
-  public int yCor;
+  public PVector pos;
   public int value; // should be positive
-  public int mode; // "show number" = 0, "show bar" = 1
   
   // constructor
-  public ListElement(int x, int y, int val, int m) {
-    xCor = x;
-    yCor = y;
+  public ListElement(PVector p, int val) {
+    pos = p;
     value = val;
-    mode = m;
+  }
+  
+  public ListElement(int val) {
+    value = val;
   }
   
   public color valToColor() {
@@ -18,7 +18,7 @@ class ListElement {
   }
   
   public void move(int destX, int destY) {
-    xCor = destX;
-    yCor = destY;
+    pos.x = destX;
+    pos.y = destY;
   }
 }
