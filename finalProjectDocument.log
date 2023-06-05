@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.3.29)  31 MAY 2023 12:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.3.29)  5 JUN 2023 10:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1203,12 +1203,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 {C:/Users/avpah/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./mergeSort.
 png>]
-<UML_v2.jpg, id=20, 817.8555pt x 451.6875pt>
-File: UML_v2.jpg Graphic file (type jpg)
-<use UML_v2.jpg>
-Package pdftex.def Info: UML_v2.jpg  used on input line 135.
-(pdftex.def)             Requested size: 334.60571pt x 184.79332pt.
- [2 <./UML_v2.jpg>] (finalProjectDocument.aux)
+<UML_v3.jpg, id=20, 1943.26pt x 1793.70125pt>
+File: UML_v3.jpg Graphic file (type jpg)
+<use UML_v3.jpg>
+Package pdftex.def Info: UML_v3.jpg  used on input line 135.
+(pdftex.def)             Requested size: 334.60571pt x 308.83904pt.
+ [2 <./UML_v3.jpg>] (finalProjectDocument.aux)
 Package rerunfilecheck Info: File `finalProjectDocument.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
@@ -1228,7 +1228,7 @@ type1/public/amsfonts/cm/cmr12.pfb><C:/Users/avpah/AppData/Local/Programs/MiKTe
 X/fonts/type1/public/amsfonts/cm/cmsl9.pfb><C:/Users/avpah/AppData/Local/Progra
 ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/avpah/AppData/L
 ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on finalProjectDocument.pdf (2 pages, 239490 bytes).
+Output written on finalProjectDocument.pdf (2 pages, 335441 bytes).
 PDF statistics:
  75 PDF objects out of 1000 (max. 8388607)
  7 named destinations out of 1000 (max. 500000)
