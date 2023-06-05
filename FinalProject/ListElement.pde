@@ -3,22 +3,16 @@ class ListElement {
   public PVector pos;
   public int value; // should be positive
   
-  // constructor
+  // constructors
   public ListElement(PVector p, int val) {
     pos = p;
     value = val;
   }
   
-  public ListElement(int val) {
-    value = val;
-  }
-  
-  public color valToColor() {
-    return color((int)(256 * 2 * Math.atan(value) / 3.14159)); // converts `value' to a number between 0 and 255; grayscale for now
-  }
-  
-  public void move(int destX, int destY) {
-    pos.x = destX;
-    pos.y = destY;
+  public color valToColor(int min, int max) {
+    float minDiff = (value - min)/(float)(max - min);
+    float maxDiff = (max - value)/(float)(max - min);
+    //System.out.println(255 * minDiff + " " + 255 * maxDiff + " " + (minDiff + maxDiff));
+    return color(255 * minDiff, 255 * maxDiff, 0);
   }
 }
