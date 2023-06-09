@@ -1,13 +1,11 @@
 class BubbleSort extends Sorter {
   // keep track of which two things are being swapped right now
-  public int leftElement;
-  public int rightElement;
+  public int leftElement = 0;
+  public int rightElement = 1;
   public boolean swapped = false;
   
   public BubbleSort(int len) {
     super(len);
-    leftElement = 0;
-    rightElement = 1;
   }
   
   /*
@@ -31,7 +29,7 @@ class BubbleSort extends Sorter {
       if (!swapped) sorted = true;
       swapped = false;
     }
-    
+  
     // DEBUG
     //for (int i = 0; i < elements.length; i++) {
     //  print(elements[i].value + " "); 
@@ -41,16 +39,5 @@ class BubbleSort extends Sorter {
     //if (sorted) System.out.println("sorted!");
     
     return toReturn;
-  }
-  
-  /*
-  reset elements to be a random array
-  */
-  void reset(int len) {
-    elements = super.generate(len);
-    sorted = false;
-    leftElement = 0;
-    rightElement = 1;
-    swapped = false;
   }
 }

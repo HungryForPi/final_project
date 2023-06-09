@@ -21,7 +21,7 @@ class Sorter {
     
     ListElement[] elems = new ListElement[n];
     for (int i = 0; i < n; i++) {
-      elems[i] = new ListElement(new PVector(width/n * (i + 0.5), height/2), nums.get(i));
+      elems[i] = new ListElement(new PVector(1000/n * (i + 0.5), 350), nums.get(i));
     }
     return elems;
   }
